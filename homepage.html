@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Department</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(190, 200, 204);
+            
+        }
+
+        /* Header Bar */
+        .header {
+            background-color:#41B3A2;
+            padding: 10px 20px;
+            display: flex;
+            color:white;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        
+        .header img {
+            height: 139px;
+        }
+
+        .header-left, .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 80%;
+            margin: auto;
+            padding-left:10px;
+            align-items: center;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+            align-items: center;
+            max-width: 1300px;
+        }
+
+        img {
+            width: 100%;
+            align-items: center;
+        }
+
+        /* Fade animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #48afd4;
+        }
+        section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .principal{
+            width:50%;
+            max-width: 50%;
+            margin: auto;
+            
+            
+        }
+     
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .faculty-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .faculty-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .faculty-details {
+            color: #555;
+        }
+        .faculty-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+           
+        }
+        .faculty-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+           
+        }
+        .faculty-email {
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+           
+        }
+        .faculty-email:hover {
+            text-decoration: underline;
+        }
+        .container {
+      padding: 1em;
+      max-width: 900px;
+      margin: auto;
+    }
+    .sections {
+      list-style-type: none;
+      padding: 0;
+    }
+    .sections li {
+      background-color: #e0e7ff;
+      margin: 1em 0;
+      padding: 1em;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sections a {
+      color: #004aad;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .sections a:hover {
+      color: #d9534f;
+    }
+        footer {
+            background-color: #;135D66
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header">
+            <div class="header-left">
+                <img src="sscelogo.jpg" alt="sscelogo">
+            </div>
+            <h1>CSE(AI&ML) DEPARTMENT</h1>
+            <div class="header-right">
+                <img src="cselogo.png" alt="cselogo">
+            </div>
+        </div>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="b1.jpg" alt="b1">
+        </div>
+        <div class="mySlides fade">
+            <img src="b2.jpg" alt="b2">
+        </div>
+        <div class="mySlides fade">
+            <img src="b4.jpg" alt="b2">
+        </div>
+        <div class="mySlides fade">
+            <img src="b5.jpg" alt="b2">
+        </div>
+        
+    </div>
+    <br>
+    <section>
+        <h2>About Us</h2>
+        <p>The Department of Computer Science and Engineering at Sri Sivani College of Engineering is committed to providing top-quality education, fostering research, and promoting innovation in the rapidly evolving field of computing. Since its inception, the department has been at the forefront of nurturing talented engineers who contribute to the global technology industry.</p>
+
+        <p>Our curriculum is designed to equip students with strong foundational knowledge in computer science along with the latest advancements in technology. The department offers undergraduate and postgraduate programs that focus on theoretical as well as practical aspects of computer science.</p>
+
+        <p>With state-of-the-art laboratories, a dedicated faculty, and a robust research environment, the CSE department is well-positioned to help students develop the technical and problem-solving skills required in today’s technology-driven world.</p>
+
+        <h2>Mission</h2>
+        <p>Our mission is to impart high-quality technical education in the field of computer science, fostering innovation, entrepreneurship, and ethical practices to meet the needs of industry and society.</p>
+
+        <h2>Vision</h2>
+        <p>Our vision is to be a center of excellence in computer science education and research, producing globally competent professionals capable of shaping the future of technology.</p>
+
+        <h2>Facilities</h2>
+        <ul>
+            <li>Advanced Computer Laboratories</li>
+            <li>Research and Innovation Centers</li>
+            <li>24/7 Internet and Computing Resources</li>
+            <li>Experienced and Industry-Trained Faculty</li>
+            <li>Regular Workshops, Seminars, and Industry Collaborations</li>
+        </ul>
+    </section>
+   <br>
+
+
+
+    <div class="principal">
+        <h1>Principal</h1>
+        <img src="principal.jpg" alt="principal">
+        <h1>Vice-Principal</h1>
+        <img src="viceprincipal.jpg" alt="viceprincipal"> 
+        <br>
+    <h1>HOD CSE(AI&ML)</h1>
+    <img src="" alt="HOD">
+    <h4>Mr.Yerrapatruni Jagadeesh Kumar</h4>
+    </div>
+    <h1>Faculty Details</h1>
+
+        <div class="faculty-grid">
+            <div class="faculty-card">
+               <a href="su.pdf" ><img src="faculty1.jpg" alt="Faculty 1"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name">Mr.Sudeer Kumar Sankili</div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:johndoe@example.com" class="faculty-email"> </a>
+                </div>
+            </div>
+            <div class="faculty-card">
+                <a href=""><img src="faculty2.jpg" alt="Faculty 2"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name">Ms.B Jhansi</div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:janesmith@example.com" class="faculty-email"> </a>
+                </div>
+            </div>
+            <div class="faculty-card">
+             <a href="" ><img src="faculty2.jpg" alt="Faculty 3"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name">Mr.K Prabanjana</div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:janesmith@example.com" class="faculty-email">  </a>
+                </div>
+            </div>
+            <div class="faculty-card">
+               <a href="" ><img src="faculty2.jpg" alt="Faculty 4"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name">Ms.P Harika </div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:janesmith@example.com" class="faculty-email">  </a>
+                </div>
+            </div>
+            
+            <div class="faculty-card">
+               <a href=""> <img src="faculty2.jpg" alt="Faculty 5"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name">Ms.D Shilpa </div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:janesmith@example.com" class="faculty-email"> </a>
+                </div>
+            </div>
+            <div class="faculty-card">
+               <a href="" ><img src="faculty2.jpg" alt="Faculty 6"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name"> </div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:janesmith@example.com" class="faculty-email"> </a>
+                </div>
+            </div>
+            <div class="faculty-card">
+              <a href="" ><img src="faculty2.jpg" alt="Faculty 7"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name"> </div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:janesmith@example.com" class="faculty-email"> </a>
+                </div>
+            </div>
+            <div class="faculty-card">
+                <a htef=""><img src="faculty2.jpg" alt="Faculty 8"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name"> </div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:janesmith@example.com" class="faculty-email"> </a>
+                </div>
+            </div>
+            <div class="faculty-card">
+               <a href=""> <img src="faculty2.jpg" alt="Faculty 9"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name"> </div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:janesmith@example.com" class="faculty-email"> </a>
+                </div>
+            </div>
+            <div class="faculty-card">
+               <a href="" ><img src="faculty2.jpg" alt="Faculty 10"></a>
+                <div class="faculty-details">
+                    <div class="faculty-name"> </div>
+                    <div class="faculty-title">Assistant Professor</div>
+                    <a href="mailto:janesmith@example.com" class="faculty-email"> </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   <br>
+   
+   <div class="container">
+    <h1>Classes Timetables</h1>
+    <ul class="sections">
+      <li>
+        <span>1 Year CSE-A</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>1 Year CSE-B</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>1 Year CSE-C</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>1 Year AI&ML</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>2 Year CSE-A</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>2 Year CSE-B</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>2 Year AI&ML</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>3 Year CSE-A</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>3 Year CSE-B</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>3 Year AI&ML</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>4 Year CSE-A</span>
+        <a href=" ">Click here</a>
+      </li>
+      <li>
+        <span>4 Year CSE-B</span>
+        <a href=" ">Click here</a>
+      </li>
+    </ul>
+  </div>
+
+    <script>
+        // JavaScript for Slideshow
+       
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        function exitPage() {
+            if (confirm('Are you sure you want to exit?')) {
+                window.close(); 
+            }
+        }
+    </script>
+
+
+</body>
+</html>
