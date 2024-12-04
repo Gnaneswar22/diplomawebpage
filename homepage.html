@@ -5,235 +5,349 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSE Department</title>
     <style>
-         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: rgb(190, 200, 204);
-            
-        }
+ /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Header Bar */
-        .header {
-            background-color:#2a98b3;
-            padding: 10px 20px;
-            display: flex;
-            color:white;
-            justify-content: space-between;
-            align-items: center;
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
 
-        }
-        
-        .header img {
-            height: 139px;
-        }
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #0078D7;
+    color: #fff;
+}
 
-        .header-left, .header-right {
-            display: flex;
-            align-items: center;
-        }
+.header img {
+    height: 60px;
+}
 
+.header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* Navigation Bar */
+nav {
+    background-color: #005BB5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        nav {
-            background-color: #0a9396;
-            padding: 10px 0;
-            position: relative;
-            top: 70px;
-            z-index: 999;
-        }
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+nav ul li {
+    position: relative;
+    margin: 0 20px;
+}
 
-        nav ul li {
-            position: relative;
-        }
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 12px 20px;
-            display: block;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
+nav ul li a:hover {
+    background-color: #0078D7;
+    border-radius: 5px;
+}
 
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1000;
+}
 
-        /* Dropdown Styles */
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            min-width: 220px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.3s ease;
-        }
+.dropdown-menu li {
+    margin: 0;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.dropdown-menu li a {
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
 
-        nav ul li:hover > ul {
-            display: block;
-        }
+.dropdown-menu li a:hover {
+    background-color: #f4f4f4;
+    color: #0078D7;
+}
 
-        nav ul li ul li a {
-            color: #333;
-            padding: 12px 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        nav ul li ul li a:hover {
-            background-color: #f5f5f5;
-            color: #0a9396;
-        }
-
-
-        /* Slideshow */
-        .slideshow-container {
-            position: relative;
-            max-width: 80%;
-            margin: auto;
-            padding-left:10px;
-            align-items: center;
-            margin: auto;
-        }
-
-        .mySlides {
-            display: none;
-            align-items: center;
-            max-width: 1300px;
-        }
-
-        img {
-            width: 100%;
-            align-items: center;
-        }
-
-        /* Fade animation */
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
-
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-            background-color: white;
-        }
-        section h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            color: #48afd4;
-        }
-        section p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .principal{
-            width:50%;
-            max-width: 50%;
-            margin: auto;
-            
-            
-        }
-     
-        .faculty-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .faculty-card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .faculty-card img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-        .faculty-details {
-            color: #555;
-        }
-        .faculty-name {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-           
-        }
-        .faculty-title {
-            font-size: 16px;
-            margin-bottom: 10px;
-           
-        }
-        .faculty-email {
-            font-size: 14px;
-            color: #007BFF;
-            text-decoration: none;
-           
-        }
-        .faculty-email:hover {
-            text-decoration: underline;
-        }
-        .container {
-      padding: 1em;
-      max-width: 900px;
-      margin: auto;
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
     }
-    .sections {
-      list-style-type: none;
-      padding: 0;
+
+    nav ul li {
+        margin: 10px 0;
     }
-    .sections li {
-      background-color: #e0e7ff;
-      margin: 1em 0;
-      padding: 1em;
-      border-radius: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+
+    .dropdown-menu {
+        position: static;
+        border: none;
+        box-shadow: none;
     }
-    .sections a {
-      color: #004aad;
-      font-weight: bold;
-      text-decoration: none;
+
+    .dropdown-menu li a {
+        padding: 10px;
     }
-    .sections a:hover {
-      color: #d9534f;
+}
+
+
+/* Slideshow Section */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Section Styling */
+section {
+    padding: 50px;
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    color: #0078D7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+section ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+section ul li {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Faculty Section */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.faculty-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faculty-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.faculty-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.faculty-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.faculty-title {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.faculty-email {
+    font-size: 0.9rem;
+    color: #0078D7;
+    text-decoration: none;
+}
+
+.faculty-email:hover {
+    text-decoration: underline;
+}
+
+/* Timetable Section */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.container h1 {
+    font-size: 1.8rem;
+    color: #0078D7;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sections {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sections li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sections li span {
+    font-weight: bold;
+    color: #333;
+}
+
+.sections li a {
+    color: #0078D7;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border: 1px solid #0078D7;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sections li a:hover {
+    background-color: #0078D7;
+    color: #fff;
+}
+
+/* Footer Section */
+footer {
+    background-color: #005BB5;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
     }
-        footer {
-            background-color: #135D66;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        border: none;
+        box-shadow: none;
+    }
+
+    .dropdown-menu li a {
+        padding: 10px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
     </style>
 </head>
@@ -252,28 +366,27 @@
 
 
 
-               <!-- Navigation Bar -->
-       <nav>
-        <ul>
-            <li><a href="homepage.html"><i class="fas fa-home"></i> Home</a></li>
-           
-            <li><a href=""><i class="fas fa-shield-alt"></i> Results</a>
-                
-            </li>
-            <li><a href="womenscorner.html"><i class="fas fa-female"></i> Materials</a>
+        <nav>
             <ul>
-                <li><a href=""><i class="fas fa-female"></i> Model Papers</a></li>
-                <li><a href=""><i class="fas fa-female"></i>study materilas</a></li>
-                <li><a href=""><i class="fas fa-female"></i> Syllabus </a></li>
-
+                <li><a href="homepage.html"><i class="fas fa-home"></i> Home</a></li>
+                <li>
+                    <a href="#"><i class="fas fa-shield-alt"></i> Results</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle"><i class="fas fa-female"></i> Materials</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Model Papers</a></li>
+                        <li><a href="#">Study Materials</a></li>
+                        <li><a href="#">Syllabus</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-concierge-bell"></i> Notifications</a>
+                </li>
+                <li><a href="contacts.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
             </ul>
-        </li>
-            <li><a href="#"><i class="fas fa-concierge-bell"></i> Notifications</a>
-               
-            </li>
-            <li><a href="contacts.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
-        </ul>
-    </nav>
+        </nav>
+        
 
     <!-- Slideshow -->
     <div class="slideshow-container">
@@ -494,7 +607,46 @@
                 window.close(); 
             }
         }
+
+
+        // Select all dropdown toggle elements
+const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+// Add click event listener to each dropdown toggle
+dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default link behavior
+
+        // Find the next sibling (dropdown menu) and toggle its visibility
+        const dropdownMenu = toggle.nextElementSibling;
+
+        // Close other open dropdowns
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+            if (menu !== dropdownMenu) {
+                menu.style.display = "none";
+            }
+        });
+
+        // Toggle the clicked dropdown menu
+        if (dropdownMenu.style.display === "block") {
+            dropdownMenu.style.display = "none";
+        } else {
+            dropdownMenu.style.display = "block";
+        }
+    });
+});
+
+// Close dropdown if clicked outside
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".dropdown")) {
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+            menu.style.display = "none";
+        });
+    }
+});
+
     </script>
+
 
 
 </body>

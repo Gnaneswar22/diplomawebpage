@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 3%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    height: 13vh;
+    top: 0;
+    z-index: 1000;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.logo img {
+    padding-top: 35px;
+    width: 350px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li {
+    padding: 8px 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #f44336, #ff7043);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-links ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Hamburger Menu Icon */
+.fa-times,
+.fa-bars {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -200px; /* Hide menu by default */
+        height: 100vh;
+        width: 200px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        padding-top: 80px;
+        transition: 0.5s ease;
+        z-index: 998;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links ul li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .fa-bars,
+    .fa-times {
+        display: block;
+        position: fixed;
+        top: 25px;
+        right: 25px;
+        z-index: 999;
+        transition: 0.3s ease;
+    }
+
+    .fa-times {
+        display: none;
+    }
+
+    /* When menu is active */
+    .nav-links.active + .fa-bars {
+        display: none;
+    }
+
+    .nav-links.active ~ .fa-times {
+        display: block;
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('diplomablock.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: slideInUp 1.5s ease-in-out;
+    max-width: 800px;
+   height: 40vh;
+}
+.hero hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #fff, #f44336);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    padding: 15px 40px;
+    margin-top: 40px;
+    font-size: 18px;
+    background: #f44336;
+    position: relative;
+    cursor: pointer;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.hero-btn:hover {
+    background: #ff3527;
+    border-color: #f44336;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(244, 67, 54, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Courses Section */
+.courses {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+}
+
+.courses h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.courses h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #f44336, #ff7043);
+}
+
+.course-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 5%;
+    flex-wrap: wrap;
+}
+
+.course-col {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.course-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #f44336, #ff7043);
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.course-col:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.course-col:hover::before {
+    transform: scaleX(1);
+}
+
+.course-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.course-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-col:hover .course-img img {
+    transform: scale(1.1);
+}
+
+
+/* Facilities Section */
+/* General Card Styles for All Sections */
+.card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    transition: transform 0.5s ease;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Section-Specific Styles */
+section {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #f44336, #ff7043);
+}
+
+/* About Our Campus Section */
+.campus-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.campus-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.campus-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Facilities Section */
+.facilities-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.facilities-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.facilities-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    transition: transform 0.5s ease;
+}
+
+.facilities-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.facilities-card:hover img {
+    transform: scale(1.1);
+}
+/*  archivement*/
+.achievements {
+    padding: 80px 0;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('campus.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+.achievements h2{
+    color: white;
+}
+.achievement-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.achievement-col {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+}
+
+.counter {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #f44336;
+    margin-bottom: 10px;
+}
+
+.achievement-col h3 {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Animation for counters */
+.counter {
+    animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/*events*/
+.events {
+    padding: 80px 0;
+    background: #f9f9f9;
+}
+
+.event-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 5%;
+}
+
+.event-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-date {
+    background: #f44336;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100px;
+}
+
+.event-date .day {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.event-date .month {
+    font-size: 1rem;
+}
+
+.event-details {
+    padding: 20px;
+}
+
+.event-details h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-details p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.event-link {
+    color: #f44336;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.event-link:hover {
+    color: #d32f2f;
+}
+
+/* Call To Action Section */
+.cta {
+    margin: 100px auto;
+    width: 90%;
+    max-width: 1200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    text-align: center;
+    padding: 100px 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(244, 67, 54, 0.8), rgba(255, 112, 67, 0.8));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.cta:hover::before {
+    opacity: 1;
+}
+
+.cta h2 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    padding: 80px 0 30px;
+    color: white;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.social-links {
+    margin: 30px 0;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 10px;
+    border-radius: 50%;
+    color: white;
+    line-height: 40px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #f44336;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(244, 67, 54, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .course-row,
+    .facilities-row,
+    .testimonial-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .course-col,
+    .facilities-col,
+    .testimonial-col {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+    
+    .cta {
+        width: 95%;
+        padding: 60px 20px;
+    }
+}
+
+
+
+
+
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+/* Typing Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+        <div class="logo">
+            <img src="LOGO.png" alt="Logo">
+        </div>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT</a></li>
+                <li><a href="faculty.html">OUR FACULTY</a></li>
+                <li><a href="https://www.manabadi.co.in/boards/apsbtet-results-apsbtet-diploma-results-sbtet-results.asp">MORE</a></li>    
+                <li><a href="contactus.html">CONTACT</a></li>
+               
+            </ul>
+        </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+        <i class="fas fa-times" onclick="hideMenu()"></i>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+           <div class="hero-text">
+            <h1 id="typing-text">Welcome <br>to <br>Sri Sivani College Of POLYTECHINC</h1>
+            <p>Discover the best educational experience with our facilities</p>
+            </div>
+            <a href="#" class="hero-btn">Visit Us To Know More</a>
+        
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+ <!-- Courses Section -->
+<section class="courses">
+    <h2>Courses We Offer</h2>
+    <div class="course-row">
+        <div class="course-col">
+            <div class="course-img">
+                <img src="civil .jpg" alt="Civil Engineering">
+            </div>
+            <h3>Civil Engineering</h3>
+            <p>Learn structural design, construction management, and infrastructure development with our comprehensive Civil Engineering program.</p>
+        </div>
+        <div class="course-col">
+            <div class="course-img">
+                <img src="mech.jpg" alt="Mechanical Engineering">
+            </div>
+            <h3>Mechanical Engineering</h3>
+            <p>Explore mechanics, thermodynamics, and manufacturing processes in our state-of-the-art Mechanical Engineering laboratories.</p>
+        </div>
+        <div class="course-col">
+            <div class="course-img">
+                <img src="eee.jpg" alt="Electrical Engineering">
+            </div>
+            <h3>Electrical Engineering</h3>
+            <p>Master electrical systems, power electronics, and circuit design with hands-on experience in modern facilities.</p>
+        </div>
+        <div class="course-col">
+            <div class="course-img">
+                <img src="cme.jpg" alt="Computer Engineering">
+            </div>
+            <h3>Computer Engineering</h3>
+            <p>Develop expertise in computer hardware, software, and networking with our industry-aligned Computer Engineering program.</p>
+        </div>
+    </div>
+</section>
+
+
+    <section class="campus">
+        <h2>About Our Campus</h2>
+        <div class="campus-row">
+            <div class="card">
+                <img src="clg1.jpg" alt="Campus 1">
+                <h3>Sri Sivani College of Polytechnic</h3>
+                <p>Our campus offers state-of-the-art facilities and a beautiful environment for learning and growth.</p>
+            </div>
+            <div class="card">
+                <img src="clg2.jpg" alt="Campus 2">
+                <h3>Sri Sivani College Of Polytechnic</h3>
+                <p>Experience the best educational atmosphere with modern facilities and expert faculty.</p>
+            </div>
+            <div class="card">
+                <img src="diplomablock.png" alt="Campus 3">
+                <h3>SRi Sivani College Of Polytechnic</h3>
+                <p>Our campus is designed to foster creativity, collaboration, and innovation.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="facilities">
+        <h2>Our Facilities</h2>
+        <div class="facilities-row">
+            <div class="card">
+                <img src="library.jpg" alt="Facility 1">
+                <h3>Library</h3>
+                <p>Our library is stocked with thousands of books, journals, and digital resources for students.</p>
+            </div>
+            <div class="card">
+                <img src="sports.jpg" alt="Facility 2">
+                <h3>Sports Complex</h3>
+                <p>A modern sports complex with facilities for basketball, football, cricket, and more.</p>
+            </div>
+            <div class="card">
+                <img src="computerlab.jpg" alt="Facility 3">
+                <h3>Laboratories</h3>
+                <p>State-of-the-art labs equipped with the latest tools and technology for hands-on learning.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="achievements">
+        <h2>Our Success Story</h2>
+        <div class="achievement-row">
+            <div class="achievement-col">
+                <div class="counter">1500+</div>
+                <h3>Students Placed</h3>
+            </div>
+            <div class="achievement-col">
+                <div class="counter">50+</div>
+                <h3>Top Companies</h3>
+            </div>
+            <div class="achievement-col">
+                <div class="counter">25+</div>
+                <h3>Years of Excellence</h3>
+            </div>
+            <div class="achievement-col">
+                <div class="counter">100%</div>
+                <h3>Placement Rate</h3>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section class="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-row">
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">15</span>
+                    <span class="month">DEC</span>
+                </div>
+                <div class="event-details">
+                    <h3>Technical Symposium</h3>
+                    <p>Annual technical fest with exciting competitions and workshops</p>
+                    <a href="#" class="event-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">20</span>
+                    <span class="month">DEC</span>
+                </div>
+                <div class="event-details">
+                    <h3>Campus Recruitment Drive</h3>
+                    <p>Top companies visiting for placement opportunities</p>
+                    <a href="#" class="event-link">Register Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Call To Action Section -->
+    <section class="cta">
+        <h2>Contact Us For More Information</h2>
+        <a href="contactus.html" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>About Us</h3>
+            <p>Brief description about the institution</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script>
+  const navLinks = document.getElementById("navLinks");
+const menuIcon = document.querySelector(".fa-bars");
+const closeIcon = document.querySelector(".fa-times");
+
+function showMenu() {
+    navLinks.classList.add("active");
+}
+
+function hideMenu() {
+    navLinks.classList.remove("active");
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !menuIcon.contains(e.target)) {
+        hideMenu();
+    }
+});
+
+// Close menu when clicking a link
+const navLinksItems = document.querySelectorAll('.nav-links ul li a');
+navLinksItems.forEach(item => {
+    item.addEventListener('click', () => {
+        hideMenu();
+    });
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownToggle.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default link behavior
+        dropdownMenu.classList.toggle('show'); // Toggle visibility
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+
+
+</script>
+</body>
+</html>
