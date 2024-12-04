@@ -346,7 +346,7 @@ nav {
 /* Faculty Image */
 .faculty-img {
     width: 100%;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
     position: relative;
 }
@@ -455,6 +455,61 @@ nav {
     }
 }
 
+/* Our Team Section */
+.our-team {
+    padding: 80px 5%;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.our-team h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 15px 0 5px;
+}
+
+.team-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
 
     </style>
 </head>
@@ -492,20 +547,50 @@ nav {
         
         </div>
     </section>
-<section>
+<section >  
+       <!-- Faculty Section -->
+<section class="faculty">
+    <h2>Our Distinguished Faculty - PRINCIPAL</h2>
+    <div class="faculty-container">
+
+
+        <div class="faculty-card">
+            <div class="faculty-img">
+                <img src="principal.jpg" alt="Faculty Name">
+            </div>
+            <div class="faculty-info">
+                <h3>S.V.N SUNIL KUMAR</h3>
+                <span class="designation">principal</span>
+                <p class="qualification">MTECH in RS &</p>
+                <div class="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>15+ Years Experience</span>
+                </div>
+                <div class="faculty-social">
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+ 
+<br>
+
+
+
     <!-- Faculty Section -->
 <section class="faculty">
-    <h2>Our Distinguished Faculty</h2>
+    <h2>Our Distinguished Faculty - HOD's</h2>
     <div class="faculty-container">
         <!-- Faculty Card 1 -->
         <div class="faculty-card">
             <div class="faculty-img">
-                <img src="path/to/faculty1.jpg" alt="Faculty Name">
+                <img src="civilhod.jpg" alt="Faculty Name">
             </div>
             <div class="faculty-info">
-                <h3>Dr. Rajesh Kumar</h3>
+                <h3> REVANTH KUMAR</h3>
                 <span class="designation">HOD - Civil Engineering</span>
-                <p class="qualification">Ph.D. in Structural Engineering</p>
+                <p class="qualification">MTECH in RS &</p>
                 <div class="experience">
                     <i class="fas fa-briefcase"></i>
                     <span>15+ Years Experience</span>
@@ -521,10 +606,10 @@ nav {
         <!-- Faculty Card 2 -->
         <div class="faculty-card">
             <div class="faculty-img">
-                <img src="path/to/faculty2.jpg" alt="Faculty Name">
+                <img src="mechhod.jpg" alt="Faculty Name">
             </div>
             <div class="faculty-info">
-                <h3>Prof. Priya Sharma</h3>
+                <h3>MAHENDRA KUMAR</h3>
                 <span class="designation">HOD - Mechanical Engineering</span>
                 <p class="qualification">M.Tech in Manufacturing Engineering</p>
                 <div class="experience">
@@ -539,7 +624,46 @@ nav {
             </div>
         </div>
 
-        <!-- Add more faculty cards as needed -->
+        <!-- Faculty Card 3 -->
+        <div class="faculty-card">
+            <div class="faculty-img">
+                <img src="cmehod.jpg" alt="Faculty Name">
+            </div>
+            <div class="faculty-info">
+                <h3>P.HARIKA</h3>
+                <span class="designation">HOD - Computer Management and Engineering</span>
+                <p class="qualification">M.Tech in Computer Engineering</p>
+                <div class="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>8+ Years Experience</span>
+                </div>
+                <div class="faculty-social">
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+         <!-- Faculty Card 4 -->
+         <div class="faculty-card">
+            <div class="faculty-img">
+                <img src="eeehod.jpg" alt="Faculty Name">
+            </div>
+            <div class="faculty-info">
+                <h3>Prof. A.PADMINI </h3>
+                <span class="designation">HOD - Electrical And electronical Engineering</span>
+                <p class="qualification">M.Tech in VLSN</p>
+                <div class="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>15+ Years Experience</span>
+                </div>
+                <div class="faculty-social">
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
